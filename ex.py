@@ -1,25 +1,31 @@
-class Calculator:
+def add(a,b):
+    return a +b
 
-    @staticmethod
-    def add(a,b):
-        return a +b
+def sub(a,b):
+    return a - b
+
+
+def main(a, b,op):
+    if op == "+":
+
+        output = add(a,b)
+        return output
+    if op == "-":
+        output = sub(a,b)
+        return output
     
-    @staticmethod
-    def sub(a,b):
-        return a - b
-
-    @staticmethod
-    def calculator(a, b):
-        if "+":
-            return Calculator.add(a,b)
-        elif "-":
-            return Calculator.sub(a,b)
-           
-def main(a,b):
-    sum_result = Calculator.calculator(a,b)
-    return sum_result
-        
+    if op == "*":
+        output = a * b
+        return output
+    
+    if op == "/":
+        output = a / b
+        return output
+    else: 
+        return "Invalid operation"
+    
 if __name__ == "__main__":
-    a = 10
-    b = 5
-    print(main(a,b))
+    a = int(input("Enter first number: "))
+    b = int(input("Enter second number: "))
+    op = input("Enter operation (+, -, *, /): ")
+    print(main(a,b,op))
