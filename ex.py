@@ -1,29 +1,24 @@
-def add(a,b):
-    return a +b
+class Calculator:
 
-def sub(a,b):
-    return a - b
-
-
-def main(a, b):
-    if "+":
-
-        output = add(a,b)
-        return output
-    if "-":
-        output = sub(a,b)
-        return output
+    @staticmethod
+    def add(a,b):
+        return a +b
     
-    if "*":
-        output = a * b
-        return output
-    
-    if "/":
-        output = a / b
-        return output
-    else: 
-        return "Invalid operation"
-    
+    @staticmethod
+    def sub(a,b):
+        return a - b
+
+    @staticmethod
+    def calculator(a, b):
+        if "+":
+            return Calculator.add(a,b)
+        elif "-":
+            return Calculator.sub(a,b)
+           
+def main(a,b):
+    sum_result = Calculator.calculator(a,b)
+    return sum_result
+        
 if __name__ == "__main__":
     a = 10
     b = 5
